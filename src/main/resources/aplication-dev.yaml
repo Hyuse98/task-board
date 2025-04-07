@@ -1,0 +1,17 @@
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:h2:mem:mydatabase;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Ou 'create', 'update', 'validate' conforme sua necessidade em desenvolvimento
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+  main:
+    web-application-type: none # Mantendo para aplicação console, ajuste se for web
